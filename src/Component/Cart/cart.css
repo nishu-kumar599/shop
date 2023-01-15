@@ -1,0 +1,56 @@
+.cursor-pointer{
+    cursor: pointer;
+}
+
+
+@media (min-width:240px) and (max-width:479px)
+{
+    .row.justify-content-end.total-amount {
+        width: 53%;
+        margin: 0 auto;
+        margin-right: 0px;
+    }
+    .inc_dec_button{
+        row-gap: 19px;
+        margin-top: 19px;
+        margin-bottom: 26px;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 767px)
+{
+    .inc_dec_button{
+        row-gap: 19px;
+        margin-top: 19px;
+        margin-bottom: 26px;
+    }
+}
+@media (min-width: 576px) and (max-width: 767px)
+{
+    .container{
+        width:100%;
+    }
+    h6.Quantity {
+        font-size: 14px;
+    }
+    .cursor-pointer {
+        padding: 4px 10px!important;
+    }
+  
+    .total-amount .col-sm-2 {
+        width: 60%;
+    }
+    ul.Product {
+        padding: 0px;
+    }
+}
+@media (min-width:768px) and (max-width: 999px)
+{
+    .cursor-pointer {
+        padding: 4px 10px!important;
+    }
+    h6.Quantity {
+        font-size: 14px;
+    }
+}
+

@@ -1,0 +1,43 @@
+.cart_details .images img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+    .quantity_box{
+        margin-top:30px;
+    }
+    .quantity_box span{
+        cursor: pointer;
+    }
+    .delete_img img {
+        width: 30px!important;
+        height: 30px!important;
+    }
+    .delete_img {
+        display: flex;
+    }
+    .delete_img img{
+        margin-left:60px;
+        margin-top: -40px!important;
+    }
+    .delete_img button{
+        margin: 0px !important;
+        border-radius: 0px!important;
+        background: transparent!important;
+        border:none!important;
+    
+    }
+    @media (min-width: 576px) and (max-width: 767px)
+{
+   
+    .cart_details .images img {
+        width: 88px;
+        height: 77px;
+        object-fit: cover;
+    }
+    .main_image{
+        padding:0px;
+    }
+    
+}
+  
