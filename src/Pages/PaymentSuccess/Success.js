@@ -12,9 +12,9 @@ const SuccessPage = () => {
       <div className="container">
         <div className="wrapper">
           <div className="row">
-            <div className="col-sm-12 text-center">
-              <FcOk />
-              <h3 className=" mt-5">Your order has been placed</h3>
+            <div className="col-sm-12 text-center mt-3">
+              <FcOk size={70} />
+              <h3 className=" mt-3">Your order has been placed</h3>
               <button
                 className="fw-semibold rounded-2 px-3 py-2 mt-2"
                 onClick={handleSubmit}

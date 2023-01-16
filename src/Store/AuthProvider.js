@@ -7,12 +7,12 @@ const AuthProvider = (props) => {
   const navigate = useNavigate();
   const userIsLoggedIn = !!token;
   const handleLogin = (token) => {
-    sessionStorage.setItem("token", token);
+    localStorage.setItem("token", token);
     setToken(token);
     navigate({ pathname: "/dashboard" }, { replace: false });
   };
   const handelLogout = () => {
-    sessionStorage.removeItem("token");
+    localStorage.removeItem("token");
     setToken(null);
     navigate({ pathname: "/" }, { replace: false });
   };
