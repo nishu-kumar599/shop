@@ -1,4 +1,4 @@
-import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap.css";
 import React, { useState } from "react";
 import "../Login/Login.css";
 import axios from "axios";
@@ -49,7 +49,7 @@ const Login = () => {
         <div className="container">
           <div className="wrapper">
             <div className="row">
-              <div className="col-sm-12 text-center mt-4">
+              <div className="text-3xl text-red-800 font-bold underline">
                 <h1>Login</h1>
               </div>
             </div>
@@ -60,6 +60,7 @@ const Login = () => {
                   placeholder="email"
                   value={email}
                   onChange={handleEmailChange}
+                  required
                 />
                 <br />
                 <input
@@ -67,6 +68,7 @@ const Login = () => {
                   placeholder="password"
                   value={password}
                   onChange={handlePasswordChange}
+                  required
                 />
                 <br />
                 <button

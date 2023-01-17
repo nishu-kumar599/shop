@@ -1,5 +1,5 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap.css";
 import { useNavigate } from "react-router-dom";
 import "../../Component/Product/Product.css";
 

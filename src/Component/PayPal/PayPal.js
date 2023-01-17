@@ -23,8 +23,8 @@ const PayPal = (product) => {
   };
   return (
     <>
-      <div className="row justify-content-end mt-2">
-        <div className="col-sm-2">
+      <div className="row justify-content-center mt-5 ">
+        <div className="col-sm-5 ">
           <PayPalButtons
             env="sandbox"
             style={{ layout: "vertical" }}

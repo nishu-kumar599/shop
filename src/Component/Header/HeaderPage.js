@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import "../../Component/Header/Header.css";
 import { FiShoppingCart } from "react-icons/fi";
 import { AiFillShop } from "react-icons/ai";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap.css";
 import CartContext from "../../Store/CartContext";
 import { useContext } from "react";
 import AuthContext from "../../Store/AuthContext";
@@ -49,6 +49,7 @@ const HeaderPage = () => {
                     onClick={onChangeHandle}
                   >
                     <AiFillShop />
+                    Ecom
                   </h1>
                 </div>
                 {authCtx.userIsLoggedIn && (

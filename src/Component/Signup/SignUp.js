@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap.css";
 import "../Signup/SignUp.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -42,7 +42,7 @@ const Signup = () => {
 
   return (
     <section>
-      <div className="container">
+      <div className="container ">
         <div className="wrapper">
           <div className="row">
             <div className="col-sm-12 text-center mt-4">

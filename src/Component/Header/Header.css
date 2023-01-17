@@ -30,6 +30,8 @@ padding-bottom:15px;
 }
 
 h1.heading.site_logo.text-light {
+    display: flex;
+    align-items: center;
     justify-content: flex-end;
     width: fit-content;
     cursor: pointer;

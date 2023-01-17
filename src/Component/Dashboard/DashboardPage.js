@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap.css";
 import ProductPage from "../Product/ProductPage";
 import "../../Component/Dashboard/Dashboard.css";
 const DashboardPage = () => {

@@ -40,4 +40,11 @@
     }
     
 }
+@media (min-width: 768px) and (max-width: 999px)
+{
+    .row.justify-content-end.total-amount .col-sm-2{
+        width: 36%;
+    }
+    
+}
   

@@ -1,16 +1,17 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import "../../Component/AddToCart/AddToCart.css";
 import CartContext from "../../Store/CartContext";
-import { PayPalButtons } from "@paypal/react-paypal-js";
-import "bootstrap/dist/css/bootstrap.min.css";
-
+import PayPal from "../PayPal/PayPal.js";
+import "bootstrap/dist/css/bootstrap.css";
 import CartItem from "../Cart/CartItem";
-import { useNavigate } from "react-router-dom";
 const AddToCartPage = () => {
+  const [payment, makePayment] = useState(false);
+
   const cartCtx = useContext(CartContext);
   const totalAmount = cartCtx.totalAmount;
-  const navigate = useNavigate();
-
+  const product = {
+    cartTotal: cartCtx.totalAmount,
+  };
   const cartItemAdd = (items) => {
     cartCtx.addToCart({
       ...items,
@@ -36,22 +37,7 @@ const AddToCartPage = () => {
       ))}
     </ul>
   );
-  const createOrder = (data, action) => {
-    return action.order.create({
-      purchase_units: [
-        {
-          amount: {
-            currency_code: "USD",
-            value: cartCtx.totalAmount,
-          },
-        },
-      ],
-    });
-  };
-  const onApprove = (data, actions) => {
-    navigate({ pathname: "/dashboard/success" }, { replace: false });
-    return actions.order.capture();
-  };
+
   return (
     <>
       <section>
@@ -70,19 +56,22 @@ const AddToCartPage = () => {
                 </h6>
               </div>
             </div>
-
-            <div className="payment_button">
-              <div className="row justify-content-center">
-                <div className="col-sm-6 mt-5">
-                  <PayPalButtons
-                    env="sandbox"
-                    style={{ layout: "vertical" }}
-                    createOrder={(data, actions) => createOrder(data, actions)}
-                    onApprove={(data, actions) => onApprove(data, actions)}
-                  />
+            {payment ? (
+              <div className="payment_button">
+                <PayPal className="paypal" product={product} />
+              </div>
+            ) : (
+              <div className="row justify-content-end mt-2">
+                <div className="col-sm-3 text-end">
+                  <button
+                    className="fw-semibold rounded-2 px-3 py-2"
+                    onClick={() => makePayment(true)}
+                  >
+                    CheckOut
+                  </button>
                 </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </section>

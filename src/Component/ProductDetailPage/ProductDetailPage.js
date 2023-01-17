@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap.css";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { GlassMagnifier } from "react-image-magnifiers";
