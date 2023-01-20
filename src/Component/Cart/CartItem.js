@@ -4,7 +4,7 @@ const CartItem = (props) => {
     <>
       <div className="container mt-4">
         <div
-          className="row-auto font-semibold grid grid-cols-4 items-center bg-black text-white rounded-xl gap-4 mt-10 px-4 py-4"
+          className="row-auto font-semibold grid extra:py-8 laptop:grid-cols-4 tablet:grid-cols-4 desktop:grid-cols-4 items-center bg-black text-white rounded-xl gap-4 mt-10 px-4 py-4"
           key={props.id}
         >
           <div className="image">

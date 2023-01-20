@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-// import "../../Component/Header/Header.css";
 import { FiShoppingCart } from "react-icons/fi";
 import { AiFillShop } from "react-icons/ai";
 import CartContext from "../../Store/CartContext";
@@ -40,18 +39,17 @@ const HeaderPage = () => {
       <header>
         <section className="bg-black py-6 ">
           <div className="container justify-between items-center mx-auto flex py-2 ">
-            <div className="  ">
-              <h1
-                className="text-white items-center text-4xl fw-bold inline-flex cursor-pointer "
-                onClick={onChangeHandle}
-              >
-                <AiFillShop />
-                Ecom
-              </h1>
-            </div>
+            <h1
+              className="text-white items-center text-4xl fw-bold inline-flex cursor-pointer"
+              onClick={onChangeHandle}
+            >
+              <AiFillShop />
+              Ecom
+            </h1>
+
             {authCtx.userIsLoggedIn && (
               <>
-                <div className="flex items-center justify-end gap-6 ">
+                <div className="laptop:flex desktop:flex tablet:flex small:grid items-center justify-end gap-6 ">
                   <button
                     className="text-white border-2 rounded-md py-1 px-4 "
                     onClick={changeProduct}

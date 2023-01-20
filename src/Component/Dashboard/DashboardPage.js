@@ -21,7 +21,7 @@ const DashboardPage = () => {
     <main>
       <section>
         <div className="container mx-auto">
-          <div className="row-auto grid grid-cols-3 gap-4   ">
+          <div className="row-auto grid tablet:grid-cols-2 mobile:grid-cols-2 laptop:grid-cols-3 gap-4  small:grid-cols-1 extra:grid-cols-1 ">
             {user.map((product, index) => (
               <ProductPage
                 key={index}

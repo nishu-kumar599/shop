@@ -12,3 +12,30 @@
   border: 0.5px solid#99999961;
   border-radius: 5px;
 }
+@media (min-width: 240px) and (max-width: 479px) {
+  .thumbnail img {
+    height: 55px !important;
+    object-fit: cover;
+  }
+  .glassMagnifier img {
+    height: 350px;
+  }
+}
+@media (min-width: 480px) and (max-width: 767px) {
+  .thumbnail img {
+    height: 55px !important;
+    object-fit: cover;
+  }
+  .glassMagnifier img {
+    height: 350px;
+  }
+}
+@media (min-width: 768px) and (max-width: 999px) {
+  .thumbnail img {
+    height: 55px !important;
+    object-fit: cover;
+  }
+  .glassMagnifier img {
+    height: 350px;
+  }
+}

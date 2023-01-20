@@ -45,7 +45,7 @@ const ProductDetailPage = () => {
     <div className="container mx-auto">
       {productData != null && (
         <>
-          <div className="row-auto grid grid-cols-2 gap-4 mt-10">
+          <div className="row-auto grid desktop:grid-cols-2 gap-4 mt-10 tablet:grid-cols-2 mobile:grid-cols-2 laptop:grid-cols-2 gap-4  extra:grid-cols-1 ">
             <div className="glassMagnifier">
               <GlassMagnifier
                 className={classes.glassMagnifier}
@@ -53,7 +53,7 @@ const ProductDetailPage = () => {
                 imageAlt={productData.title}
               />
 
-              <div className="row-auto grid grid-cols-4 grid-flow-col gap-4 mt-5 mb-10">
+              <div className="row-auto grid grid-cols-4 gap-4 mt-5 mb-10 ">
                 {productData.images.map((img, index) => (
                   <div className="thumbnail" key={index}>
                     <img
