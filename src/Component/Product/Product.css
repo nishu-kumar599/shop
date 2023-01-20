@@ -1,13 +1,13 @@
 .glassMagnifier img {
   background-size: cover;
   height: 500px;
-  object-fit: fill;
+  object-fit: cover;
   width: 100%;
 }
 .thumbnail img {
   cursor: pointer;
   height: 100px !important;
-  object-fit: fill;
+  object-fit: cover;
   width: 100% !important;
   border: 0.5px solid#99999961;
   border-radius: 5px;
