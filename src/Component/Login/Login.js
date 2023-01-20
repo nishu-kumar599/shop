@@ -1,6 +1,5 @@
-import "bootstrap/dist/css/bootstrap.css";
 import React, { useState } from "react";
-import "../Login/Login.css";
+// import "../Login/Login.css";
 import axios from "axios";
 import { useContext } from "react";
 import AuthContext from "../../Store/AuthContext";
@@ -45,43 +44,35 @@ const Login = () => {
 
   return (
     <>
-      <section>
-        <div className="container">
-          <div className="wrapper">
-            <div className="row">
-              <div className="text-3xl text-red-800 font-bold underline">
-                <h1>Login</h1>
-              </div>
-            </div>
-            <div className="row mt-2 justify-content-center text-center">
-              <div className="col-sm-5 py-5  bg-black text-center login_form">
-                <input
-                  type="email"
-                  placeholder="email"
-                  value={email}
-                  onChange={handleEmailChange}
-                  required
-                />
-                <br />
-                <input
-                  type="password"
-                  placeholder="password"
-                  value={password}
-                  onChange={handlePasswordChange}
-                  required
-                />
-                <br />
-                <button
-                  className="fw-semibold rounded-2 px-3 py-2 text-center"
-                  onClick={handleSubmit}
-                >
-                  Submit
-                </button>
-              </div>
-            </div>
-          </div>
+      <h1 className="mb-5 font-bold text-4xl mt-10 text-center">Login</h1>
+      <div className="desktop:w-2/5 laptop:w-2/5 mx-auto bg-black py-10 px-10  mobile:w-full">
+        <div className="rounded-sm text-center">
+          <input
+            className="min-w-full small:w-full extra:w-full rounded-sm"
+            type="email"
+            placeholder="email"
+            value={email}
+            onChange={handleEmailChange}
+            required
+          />
         </div>
-      </section>
+        <div className="rounded-sm mt-6 text-center">
+          <input
+            className="min-w-full small:w-full extra:w-full rounded-sm"
+            type="password"
+            placeholder="password"
+            value={password}
+            onChange={handlePasswordChange}
+            required
+          />
+        </div>
+        <button
+          className="border-2 rounded-lg text-black mt-8 py-2 font-semibold px-3 bg-white"
+          onClick={handleSubmit}
+        >
+          Submit
+        </button>
+      </div>
     </>
   );
 };

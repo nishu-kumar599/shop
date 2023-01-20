@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import "bootstrap/dist/css/bootstrap.css";
+import classes from "../Product/Product.css";
+// import classes from "./Cart.module.css";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { GlassMagnifier } from "react-image-magnifiers";
@@ -41,67 +42,65 @@ const ProductDetailPage = () => {
   };
 
   return (
-    <main>
-      <div className="container product_detail mt-4">
-        <div className="wrapper">
-          {productData != null && (
-            <div className="row product_image">
-              <div className="col-sm-6 product_big_image">
-                <GlassMagnifier
-                  imageSrc={image !== 0 ? image : productData.thumbnail}
-                  imageAlt={productData.title}
-                />
+    <div className="container mx-auto">
+      {productData != null && (
+        <>
+          <div className="row-auto grid grid-cols-2 gap-4 mt-10">
+            <div className="glassMagnifier">
+              <GlassMagnifier
+                className={classes.glassMagnifier}
+                imageSrc={image !== 0 ? image : productData.thumbnail}
+                imageAlt={productData.title}
+              />
 
-                <div className="row product_thumbnail_images mt-3">
-                  {productData.images.map((img, index) => (
-                    <div className="col-sm-3 text-center" key={index}>
-                      <img
-                        src={img}
-                        alt={productData.title}
-                        onClick={changeImage}
-                      />
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="col-sm-6 product_details">
-                <h2>
-                  {productData.brand}/{productData.category}
-                </h2>
-                <h1>{productData.title}</h1>
-                <sup>
-                  <b>Rating:</b>
-                  {productData.rating}
-                </sup>
-                <h5>
-                  <b>Stock left:</b>
-                  {productData.stock}
-                </h5>
-                <div className="product-price">
-                  <span>
-                    <b>Price:</b>${productData.price}
-                  </span>
-                  <br />
-                  <span>
-                    <b>Discount Percentage:</b>${productData.price}
-                  </span>
-                </div>
-                <p>
-                  <b>Description</b>
-                  <br />
-                  {productData.description}
-                </p>
-                <div className="row add_to_cart_section">
-                  <div className="col-sm-12 d-flex  ">
-                    <CartForm onAddToCart={addToCartHandler} />
+              <div className="row-auto grid grid-cols-4 grid-flow-col gap-4 mt-5 mb-10">
+                {productData.images.map((img, index) => (
+                  <div className="thumbnail" key={index}>
+                    <img
+                      className={classes.thumbnail}
+                      src={img}
+                      alt={productData.title}
+                      onClick={changeImage}
+                    />
                   </div>
-                </div>
+                ))}
               </div>
             </div>
-          )}
-        </div>
-      </div>
-    </main>
+            <div className="w-full">
+              <h2 className="text-sm text-slate-500 font-semibold">
+                {productData.brand}/{productData.category}
+              </h2>
+              <h1 className="text-xl my-2 mb-4 font-bold">
+                {productData.title}
+              </h1>
+              <sup className="text-lg">
+                <b>Rating:</b>
+                {productData.rating}
+              </sup>
+              <h5 className="text-lg my-2 ">
+                <b>Stock left:</b>
+                {productData.stock}
+              </h5>
+              <h6 className="text-lg my-2">
+                <b>Price:</b>${productData.price}
+              </h6>
+
+              <span className="text-lg my-2">
+                <b>Discount Percentage:</b>${productData.price}
+              </span>
+
+              <p className="text-lg my-2">
+                <b>Description</b>
+
+                {productData.description}
+              </p>
+
+              <CartForm onAddToCart={addToCartHandler} />
+            </div>
+          </div>
+        </>
+      )}
+    </div>
   );
 };
 

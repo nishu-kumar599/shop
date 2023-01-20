@@ -1,7 +1,5 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.css";
 import { useNavigate } from "react-router-dom";
-import "../../Component/Product/Product.css";
 
 const ProductPage = (props) => {
   const navigate = useNavigate();
@@ -10,14 +8,21 @@ const ProductPage = (props) => {
     navigate({ pathname: `/dashboard/${props.id}` }, { replace: false });
   };
   return (
-    <div className="col-sm-4" onClick={submitHandle}>
-      <div className=" product-box py-4 px-4" key={props.id}>
-        <span>{props.id}</span>
-        <img src={props.images} alt={props.title} />
-        <h1>{props.title}</h1>
-        <p>{props.description}</p>
-        <h6 className="text-light">Price: ${props.price}</h6>
-        <button className="border-0 text-black font-weight-bold mt-2 py-1 px-3 text-transform-uppercase rounded-2">
+    <div className="float-left mt-7" onClick={submitHandle}>
+      <div
+        className="rounded-lg drop-shadow-xl bg-black py-4 px-10 text-white text-center"
+        key={props.id}
+      >
+        <span className="hidden">{props.id}</span>
+        <img
+          className="my-4 w-64 object-cover h-48 mx-auto"
+          src={props.images}
+          alt={props.title}
+        />
+        <h1 className="my-3 line-clamp-1">{props.title}</h1>
+        <p className="line-clamp-1 my-3">{props.description}</p>
+        <h6 className="text-light my-3">Price: ${props.price}</h6>
+        <button className="text-white my-3 border-2 rounded-md py-1 px-4">
           Buy now
         </button>
       </div>

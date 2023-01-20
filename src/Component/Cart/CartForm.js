@@ -25,7 +25,7 @@ const CartForm = (props) => {
             step: "1",
           }}
         />
-        <button className=" border-0 mt-4 fw-semibold rounded-2 px-3 py-2">
+        <button className="text-back border-2 rounded-md py-2 px-4 border-black mt-10 font-normal">
           Add To Cart
         </button>
       </form>

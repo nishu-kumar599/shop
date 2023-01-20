@@ -1,8 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import "../../Component/Header/Header.css";
+// import "../../Component/Header/Header.css";
 import { FiShoppingCart } from "react-icons/fi";
 import { AiFillShop } from "react-icons/ai";
-import "bootstrap/dist/css/bootstrap.css";
 import CartContext from "../../Store/CartContext";
 import { useContext } from "react";
 import AuthContext from "../../Store/AuthContext";
@@ -39,59 +38,47 @@ const HeaderPage = () => {
   return (
     <>
       <header>
-        <section className=" header-section bg-dark">
-          <div className="container py-2">
-            <div className="wrapper">
-              <div className="row align-items-sm-center header_row">
-                <div className="col-sm-7 first_col">
-                  <h1
-                    className="heading site_logo text-light"
-                    onClick={onChangeHandle}
-                  >
-                    <AiFillShop />
-                    Ecom
-                  </h1>
-                </div>
-                {authCtx.userIsLoggedIn && (
-                  <div className="col-sm-5 cart_images text-light second_col">
-                    <div className="row align-items-sm-center logout">
-                      <div className="col-sm-3">
-                        <button
-                          className="fw-semibold rounded-2 px-3 py-2"
-                          onClick={changeProduct}
-                        >
-                          Product
-                        </button>
-                      </div>
-                      <div className="col-sm-3">
-                        <button
-                          className="fw-semibold rounded-2 px-3 py-2"
-                          onClick={logoutHandle}
-                        >
-                          Logout
-                        </button>
-                      </div>
-                      <div className="col-sm-6">
-                        <div className="box add_to_cart_button">
-                          <button
-                            className="fw-semibold rounded-2 px-1 py-2"
-                            onClick={cartSubmit}
-                          >
-                            <FiShoppingCart
-                              onClick={onChangePage}
-                            ></FiShoppingCart>
-                            Your cart
-                            <span className="bg-black text-light rounded-5 cartTotal">
-                              {NumberOfItemCart}
-                            </span>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
+        <section className="bg-black py-6 ">
+          <div className="container justify-between items-center mx-auto flex py-2 ">
+            <div className="  ">
+              <h1
+                className="text-white items-center text-4xl fw-bold inline-flex cursor-pointer "
+                onClick={onChangeHandle}
+              >
+                <AiFillShop />
+                Ecom
+              </h1>
             </div>
+            {authCtx.userIsLoggedIn && (
+              <>
+                <div className="flex items-center justify-end gap-6 ">
+                  <button
+                    className="text-white border-2 rounded-md py-1 px-4 "
+                    onClick={changeProduct}
+                  >
+                    Product
+                  </button>
+
+                  <button
+                    className="text-white border-2 rounded-md py-1 px-4 "
+                    onClick={logoutHandle}
+                  >
+                    Logout
+                  </button>
+
+                  <button
+                    className="text-white border-2 flex items-center rounded-md py-1 px-4 gap-2 "
+                    onClick={cartSubmit}
+                  >
+                    <FiShoppingCart onClick={onChangePage}></FiShoppingCart>
+                    Your cart
+                    <span className="bg-white rounded-full font-bold text-black py-1 px-3">
+                      {NumberOfItemCart}
+                    </span>
+                  </button>
+                </div>
+              </>
+            )}
           </div>
         </section>
       </header>

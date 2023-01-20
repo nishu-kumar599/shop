@@ -1,4 +1,3 @@
-import "bootstrap/dist/css/bootstrap.css";
 import React, { useState } from "react";
 import Signup from "../Signup/SignUp";
 import Login from "../Login/Login";
@@ -9,26 +8,24 @@ const LoginSignButtonPage = () => {
     setLogin((change) => !change);
   };
   return (
-    <section>
-      <div className="container">
-        <div className="wrapper">
-          <div className="row">
-            <div className="col-sm-12 text-center changebutton">
-              {login ? <Signup /> : <Login />}
-              {login ? (
-                <h3 className="mt-3">Already have account ?</h3>
-              ) : (
-                <h3 className="mt-3">Don't have an account yet ?</h3>
-              )}
-              <button
-                className="fw-semibold rounded-2 px-3 py-2 text-center changevalue mt-2"
-                onClick={signupHandle}
-              >
-                {login ? " Login " : " Sign Up"}
-              </button>
-            </div>
-          </div>
-        </div>
+    <section className="h-full gradient-form  md:h-screen">
+      <div className="container mx-auto mobile:w-full  spy-12 px-6 h-full text-center">
+        {login ? <Signup /> : <Login />}
+        {login ? (
+          <h3 className="mt-3 mobile:font-semibold text-center font-bold text-xl">
+            Already have account ?
+          </h3>
+        ) : (
+          <h3 className="mt-3 text-center mobile:font-semibold font-bold text-xl">
+            Don't have an account yet ?
+          </h3>
+        )}
+        <button
+          className=" text-center mt-2 text-cyan-600"
+          onClick={signupHandle}
+        >
+          {login ? " Login " : " Sign Up"}
+        </button>
       </div>
     </section>
   );

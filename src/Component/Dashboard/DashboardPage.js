@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
-import "bootstrap/dist/css/bootstrap.css";
 import ProductPage from "../Product/ProductPage";
 import "../../Component/Dashboard/Dashboard.css";
 const DashboardPage = () => {
@@ -20,24 +19,22 @@ const DashboardPage = () => {
 
   return (
     <main>
-      <div className="section">
-        <div className="container">
-          <div className="wrapper">
-            <div className="row">
-              {user.map((product, index) => (
-                <ProductPage
-                  key={index}
-                  images={product.thumbnail}
-                  title={product.title}
-                  description={product.description}
-                  price={product.price}
-                  id={product.id}
-                />
-              ))}
-            </div>
+      <section>
+        <div className="container mx-auto">
+          <div className="row-auto grid grid-cols-3 gap-4   ">
+            {user.map((product, index) => (
+              <ProductPage
+                key={index}
+                images={product.thumbnail}
+                title={product.title}
+                description={product.description}
+                price={product.price}
+                id={product.id}
+              />
+            ))}
           </div>
         </div>
-      </div>
+      </section>
     </main>
   );
 };
